@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Barlow, Roboto, "Helvetica Neue", sans-serif;
+  background-color: #EFF2F7;
+  min-width: 320px;
+  max-width: 1920px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-title {
+  font-size: 50px;
+  font-weight: 700;
+  color: #3A7859;
+  line-height: 75px;
+  position: absolute;
+  top: 134px;
+  text-align: center;
+  margin: 0
+}

@@ -1,0 +1,14 @@
+<div class="container" [@fadeInOut]>
+  <p class="main-title">Thank You!</p>
+  <p class="subtitle">Your score: {{score}}/{{totalQuestionsCount}}</p>
+  <button class="back-button"
+          (click)="navigateToHomePage()">
+    <p class="button-text">Back to home</p>
+  </button>
+
+  <div class="table-container">
+    <p class="table-title">Your score table</p>
+    <app-player-scores [quizResults]="quizResults"></app-player-scores>
+  </div>
+</div>
+

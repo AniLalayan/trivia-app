@@ -1,0 +1,21 @@
+<div class="container" [@fadeInOut]>
+  <p class="main-title">Trivia App</p>
+
+  <p class="subtitle">Pick a Category</p>
+
+  <mat-form-field class="category-dropdown">
+    <mat-label>Category</mat-label>
+    <mat-select [(value)]="selectedCategoryId">
+      <mat-option *ngFor="let category of categories"
+                  [value]="category.id">{{category.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button [disabled]="!selectedCategoryId"
+          [ngStyle]="{ 'background-color': !selectedCategoryId ? '#fff' : '#3A7859'}"
+          class="start-button"
+          (click)="start()">
+    <p class="button-text"
+       [ngStyle]="{ 'color': !selectedCategoryId ? '#C4C4C4' : '#fff'}">Start</p>
+  </button>
+</div>

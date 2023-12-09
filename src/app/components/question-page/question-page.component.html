@@ -1,0 +1,19 @@
+<div *ngIf="currentQuestion" class="container" [@fadeInOut]>
+  <p class="main-title">Question {{currentIndex !== 9 ? 0 : ''}}{{currentIndex + 1}}</p>
+  <div class="status" [ngStyle]="{ 'background-color': applyStatusColor(currentQuestion.difficulty) }">
+    <p class="status-text">{{ currentQuestion.difficulty | capitalize}}</p>
+  </div>
+  <div class="question-container" >
+    <p class="question-text" [innerHTML]="currentQuestion.question"></p>
+    <!--  Օգտագործել եմ [innerHTML] որովհետև սերվերից տեքստը գալիս էր այսպիսի տեսքով - The novel &quot;Jane Eyre&quot; was written by what author?-->
+    <!--  [innerHTML]-ը տեքստի մեջ գտնվող HTML օգյեկտները (օրինակ &quot;) ավտոմատ կեպով վերափոխում է համապատասխան նշանների;-->
+
+    <ul class="answers-container">
+      <li *ngFor="let answer of answers">
+        <button (click)="checkAnswer(answer)" class="answer-button">
+          <p class="answer-text" [innerHTML]="answer"></p>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

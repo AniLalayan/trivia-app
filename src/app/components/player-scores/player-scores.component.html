@@ -1,0 +1,28 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let result of quizResults"
+                       (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Score: {{result.score}}/{{result.questionData.length}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Toggle to see you answers
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table style="overflow: auto">
+      <tbody>
+      <tr>
+        <th>Question</th>
+        <th>Your Answer</th>
+        <th>Correct Answer</th>
+      </tr>
+      <tr *ngFor="let question of result.questionData">
+        <td [innerHTML]="question.question"></td>
+        <td [innerHTML]="question.userAnswer"></td>
+        <td [innerHTML]="question.correctAnswer"></td>
+      </tr>
+      </tbody>
+    </table>
+  </mat-expansion-panel>
+</mat-accordion>

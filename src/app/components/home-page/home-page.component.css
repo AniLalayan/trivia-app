@@ -1,0 +1,34 @@
+.subtitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: #354153;
+  line-height: 45px;
+  position: absolute;
+  top: 355px;
+  max-width: 1080px;
+  text-align: center;
+  margin: 0;
+}
+
+.category-dropdown {
+  position: absolute;
+  top: 436px;
+  width: 320px;
+}
+
+.start-button {
+  position: absolute;
+  top: 591px;
+  width: 150px;
+  height: 56px;
+  border-radius: 15px;
+  border: none;
+}
+
+.button-text {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.6px;
+  text-align: center;
+  margin: 0;
+}
