@@ -4,7 +4,18 @@ import {HttpDataService} from "../../shared/services/http-data.service";
 import {QuestionResponseModel} from "../../shared/models/question-response.model";
 import {QuestionModel} from "../../shared/models/question.model";
 import {StatusEnum} from "../../shared/status.enum";
-import {trigger, transition, style, animate, query, stagger, state, keyframes, sequence} from '@angular/animations';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  query,
+  stagger,
+  state,
+  keyframes,
+  sequence,
+  group
+} from '@angular/animations';
 import {QuestionTableRowModel} from "../../shared/models/question-table-row.model";
 import {QuizResultsModel} from "../../shared/models/quiz-results.model";
 
@@ -14,12 +25,13 @@ import {QuizResultsModel} from "../../shared/models/quiz-results.model";
   styleUrls: ['./question-page.component.css'],
   animations: [
     trigger('fadeInOut', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('300ms', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [
-        animate('300ms', style({ opacity: 0 })),
+      transition(':increment, :decrement', [
+        group([
+          query('.main-title, .status, .question-container, .answers-container', [
+            style({ opacity: 0, transform: 'translateY(10px)' }),
+            animate('300ms', style({ opacity: 1, transform: 'translateY(0)' })),
+          ]),
+        ]),
       ]),
     ]),
   ],
