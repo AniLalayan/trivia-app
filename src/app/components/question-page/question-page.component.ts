@@ -10,10 +10,6 @@ import {
   style,
   animate,
   query,
-  stagger,
-  state,
-  keyframes,
-  sequence,
   group
 } from '@angular/animations';
 import {QuestionTableRowModel} from "../../shared/models/question-table-row.model";
@@ -24,6 +20,15 @@ import {QuizResultsModel} from "../../shared/models/quiz-results.model";
   templateUrl: './question-page.component.html',
   styleUrls: ['./question-page.component.css'],
   animations: [
+    trigger('easeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('300ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('300ms', style({ opacity: 0 })),
+      ]),
+    ]),
     trigger('fadeInOut', [
       transition(':increment, :decrement', [
         group([
