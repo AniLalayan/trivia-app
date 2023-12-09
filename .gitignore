@@ -40,3 +40,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Ignore environment-specific files
+/src/environments/environment*.ts
+
+# Ignore Firebase configuration files
+.firebase/
